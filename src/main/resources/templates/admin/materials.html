@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Materials</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Materials</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="material : ${materials}">
+            <td th:text="${material.id}"></td>
+            <td th:text="${material.name}"></td>
+            <td th:text="${material.quantity}"></td>
+            <td>
+                <a th:href="@{/admin/materials/{id}(id=${material.id})}" class="btn btn-info">View</a>
+                <a th:href="@{/admin/materials/edit/{id}(id=${material.id})}" class="btn btn-primary">Edit</a>
+                <a th:href="@{/admin/materials/delete/{id}(id=${material.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/admin/materials/add}" class="btn btn-success">Add Material</a>
+</div>
+</body>
+</html>

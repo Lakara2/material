@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Materials</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>User Materials</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="material : ${materials}">
+            <td th:text="${material.id}"></td>
+            <td th:text="${material.name}"></td>
+            <td th:text="${material.quantity}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
