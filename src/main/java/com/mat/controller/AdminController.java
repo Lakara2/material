@@ -31,7 +31,7 @@ public class AdminController {
     @GetMapping("/materials/add")
     public String showAddMaterialForm(Model model) {
         model.addAttribute("material", new Material());
-        return "admin/add_material";
+        return "admin/add";
     }
 
     @PostMapping("/materials")
@@ -44,7 +44,7 @@ public class AdminController {
     public String showEditMaterialForm(@PathVariable Long id, Model model) {
         Material material = materialService.getMaterialById(id);
         model.addAttribute("material", material);
-        return "admin/edit_material";
+        return "admin/edit";
     }
 
     @PostMapping("/materials/edit/{id}")

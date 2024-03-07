@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.Collections;
 @Controller
 public class RegisterController {
 
@@ -25,7 +24,7 @@ public class RegisterController {
         return "register";
     }
 
-    @PostMapping("/register/newUser")
+    @PostMapping("/register")
     public String registerUser(@RequestParam String username, @RequestParam String password, @RequestParam String role, RedirectAttributes redirectAttributes) {
         if (role.equals("ADMIN") || role.equals("USER")) {
             if (!isAdmin()) {
